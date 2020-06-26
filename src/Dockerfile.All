@@ -1,0 +1,9 @@
+FROM golang:1.13-alpine3.11
+RUN apk add git bash
+ENV GO111MODULE=on
+ENV GOPROXY=direct
+EXPOSE 8080
+WORKDIR /app
+ADD . .
+RUN go build -i -o /bin/api main.go
+CMD [ "/bin/api" ]

@@ -1,0 +1,11 @@
+version: "2"
+services:
+  app:
+    build:
+      context: ./src
+      #dockerfile: Dockerfile.All
+      dockerfile: Dockerfile.Staged
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./src:/app
